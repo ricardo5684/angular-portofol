@@ -5,7 +5,7 @@ import { ToastrModule } from 'ngx-toastr';
 import{AngularFireModule} from '@angular/fire/compat';
 import{AngularFirestoreModule} from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment.prod';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layouts/header/header.component';
@@ -13,6 +13,9 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CategoriesComponent } from './categories/categories.component';
 import{ BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AllPostsComponent } from './posts/all-posts/all-posts.component';
+import { NewPostsComponent } from './posts/new-post/new-posts.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import{ BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     FooterComponent,
     DashboardComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    AllPostsComponent,
+    NewPostsComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +35,8 @@ import{ BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
+    HttpClientModule,
+    AngularEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
